@@ -1,6 +1,3 @@
-package util;
-
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -102,7 +99,7 @@ public class GiftCard extends BaseDriver {
         String actualMessage = notificationn.getText();
         String expectedMessage = "The product has been added to your";
         assertTrue("Aranılan mesaj bulunamadı", actualMessage.contains(expectedMessage));
-        System.out.println("Çıkan mesajı " + actualMessage + " istenilen gibidir");
+        System.out.println("Çıkan mesajı ' " + actualMessage + " ' istenilen gibidir");
 
 
         WebElement addtoCardButton = driver.findElement(By.xpath("//*[@id='add-to-cart-button-1']"));
@@ -123,7 +120,7 @@ public class GiftCard extends BaseDriver {
         String expectedMessage1 = "The coupon code you entered couldn't be applied to your order";
         assertTrue("Aranılan mesaj bulunamadı", actualMessage1.contains(expectedMessage1));
 
-        System.out.println("Çıkan mesajı " + actualMessage1 + " istenilen gibidir");
+        System.out.println("Çıkan mesajı ' " + actualMessage1 + " '  istenilen gibidir");
 
         WebElement GiftCardBt = driver.findElement(By.xpath("//input[@class='button-2 apply-gift-card-coupon-code-button']"));
         GiftCardBt .click();
@@ -136,7 +133,7 @@ public class GiftCard extends BaseDriver {
         String expectedMessage2 = "The coupon code you entered couldn't be applied to your order";
         assertTrue("Aranılan mesaj bulunamadı", actualMessage2.contains(expectedMessage2));
 
-        System.out.println("Çıkan mesajı " + actualMessage2 + " istenilen gibidir");
+        System.out.println("Çıkan mesajı ' " + actualMessage2 + " ' istenilen gibidir");
 
         System.out.println("3.üncü test başarıyla sonuçlandı.");
 
