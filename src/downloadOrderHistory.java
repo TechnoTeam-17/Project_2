@@ -27,7 +27,7 @@ public class downloadOrderHistory extends BaseDriver {
         WebElement orders=driver.findElement(By.xpath("//*[@href='/customer/orders']"));
         orders.click();
         MyFunc.Bekle(1);
-        JavascriptExecutor js=(JavascriptExecutor) driver;//casting
+        JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, 500)"  );
 //siparis detayina giris ve fatura yukleme
         MyFunc.Bekle(1);
