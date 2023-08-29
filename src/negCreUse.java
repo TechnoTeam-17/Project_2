@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import util.BaseDriver;
 import util.MyFunc;
 
-public class us_7 extends BaseDriver {
+public class negCreUse extends BaseDriver {
     @Test
    public void negativeCreateUserAccount (){
          driver.get("https://demowebshop.tricentis.com/");
