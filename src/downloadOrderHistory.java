@@ -33,9 +33,9 @@ public class downloadOrderHistory extends BaseDriver {
         MyFunc.Bekle(1);
         WebElement firstOrderDetail=driver.findElement(By.cssSelector("input[value='Details']"));
         firstOrderDetail.click();
-        MyFunc.Bekle(1);
+        MyFunc.Bekle(2);
 
-        WebElement download=driver.findElement(By.xpath("//*[@href='/orderdetails/pdf/1501518']"));
+        WebElement download=driver.findElement(By.linkText("PDF Invoice"));
         download.click();
 
         BekleVeKapat();
