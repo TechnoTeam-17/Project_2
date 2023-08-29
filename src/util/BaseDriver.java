@@ -30,6 +30,9 @@ public class BaseDriver {
     public static void login () {
         MyFunc.Bekle(1);
         MyFunc.Bekle(1);
+        driver.get("https://demowebshop.tricentis.com/");
+        driver.manage().window().maximize();
+
         WebElement logina= driver.findElement(By.xpath("//*[@href='/login']"));
         logina.click();
         MyFunc.Bekle(1);
@@ -41,6 +44,7 @@ public class BaseDriver {
         MyFunc.Bekle(1);
         WebElement login= driver.findElement(By.xpath("//*[@type='submit'][@value='Log in']"));
         login.click();
+
     }
     public static void logout(){
         driver.get("https://demowebshop.tricentis.com/");
