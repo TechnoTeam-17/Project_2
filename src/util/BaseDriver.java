@@ -54,7 +54,7 @@ public class BaseDriver {
         logout.click();}
 
     public static void BekleVeKapat(){
-        MyFunc.Bekle(5);
+        MyFunc.Bekle(2);
         driver.quit();
     }}
 
