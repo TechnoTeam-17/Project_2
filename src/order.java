@@ -31,44 +31,80 @@ public class order<Select> extends BaseDriver {
         WebElement addToCard2=driver.findElement(By.xpath("//*[@id='add-to-cart-button-22']"));
         addToCard2.click();
         MyFunc.Bekle(1);
+
         WebElement shoppingCard=driver.findElement(By.xpath("//span[@class='cart-label']"));
         shoppingCard.click();
         MyFunc.Bekle(1);
+
         WebElement selectCountry=driver.findElement(By.xpath("//select[@id='CountryId']"));
         selectCountry.click();
         MyFunc.Bekle(1);
+
         WebElement state=driver.findElement(By.xpath("//select[@id='StateProvinceId']"));
         state.click();
         MyFunc.Bekle(1);
+
         WebElement agree=driver.findElement(By.xpath("//input[@id='termsofservice']"));
         agree.click();
         MyFunc.Bekle(1);
+
         WebElement checkout=driver.findElement(By.xpath("//button[@id='checkout']"));
         checkout.click();
         MyFunc.Bekle(1);
+
         WebElement adress=driver.findElement(By.xpath("//select[@name='billing_address_id']"));
         adress.click();
         MyFunc.Bekle(1);
+
         WebElement continio=driver.findElement(By.xpath("//input[@class='button-1 new-address-next-step-button']"));
         continio.click();
         MyFunc.Bekle(3);
+
         WebElement inStorePickup=driver.findElement(By.xpath("//input[@id='PickUpInStore']"));
         inStorePickup.click();
         MyFunc.Bekle(2);
+
         WebElement continio2=driver.findElement(By.xpath("//input[@onclick='Shipping.save()']"));
         continio2.click();
         MyFunc.Bekle(1);
-        WebElement paymentMethod=driver.findElement(By.xpath("//input[@id='paymentmethod_2']"));
-        paymentMethod.click();
-        MyFunc.Bekle(1);
-        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-method-next-step-button']"));
+
+//        WebElement paymentMethod=driver.findElement(By.xpath("//input[@id='paymentmethod_2']"));
+//        paymentMethod.click();
+//        MyFunc.Bekle(1);
+
+//        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-method-next-step-button']"));
+//        continio3.click();
+//        MyFunc.Bekle(1);
+
+        WebElement cash=driver.findElement(By.id("paymentmethod_0"));
+        cash.click();
+        MyFunc.Bekle(2);
+
+//        WebElement cardType=driver.findElement(By.id("CreditCardType"));
+//        cardType.click();
+//        MyFunc.Bekle(1);
+//        WebElement cardHolderName=driver.findElement(By.id("CardholderName"));
+//        cardHolderName.sendKeys("Ali");
+//        MyFunc.Bekle(1);
+//        WebElement cardNumber=driver.findElement(By.id("CardNumber"));
+//        cardNumber.sendKeys("4154517955027492");
+//        MyFunc.Bekle(1);
+//        WebElement Month=driver.findElement(By.id("ExpireMonth"));
+//        Month.sendKeys("05");
+//        MyFunc.Bekle(1);
+//
+//        WebElement Year=driver.findElement(By.id("ExpireYear"));
+//        Year.sendKeys("2023");
+//        MyFunc.Bekle(1);
+//
+//        WebElement cardCode =driver.findElement(By.id("CardCode"));
+//        cardCode.sendKeys("2974");
+//        MyFunc.Bekle(2);
+
+        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-info-next-step-button']']"));
         continio3.click();
+        MyFunc.Bekle(1);
 
-        WebElement purchaseOrderPOBox = driver.findElement(By.xpath("//input[@id='PurchaseOrderNumber']"));
-        purchaseOrderPOBox.sendKeys("1502463");
-
-        WebElement purchaseOrderInfoContinueButton02 = driver.findElement(By.xpath("//input[@onclick='PaymentInfo.save()']"));
-        purchaseOrderInfoContinueButton02.click();
 
         List<WebElement> prices = driver.findElements(By.xpath("//[@class='product-subtotal']"));
 
@@ -82,40 +118,13 @@ public class order<Select> extends BaseDriver {
         Double itemTotal = Double.parseDouble(itemTotalelement.getText().replaceAll("[^0-9,.]", ""));
 
         Assert.assertTrue(itemTotal == totalPrice);
+
+        BekleVeKapat();
     }
 
-       // WebElement cardType=driver.findElement(By.id("CreditCardType"));
-       // cardType.isSelected();
-
-      //  WebElement cardHolderName=driver.findElement(By.id("CardholderName"));
-       // WebElement cardNumber=driver.findElement(By.id("CardNumber"));
-       //// WebElement Month=driver.findElement(By.id("ExpireMonth"));
-       // WebElement Year=driver.findElement(By.id("ExpireYear"));
-       // WebElement CardCode =driver.findElement(By.id("CardCode"));
 
 
 
-
-       // month.selectByValue("5");
-      //  year.selectByVisibleText("2023");
-
-
-
-
-
-
-
-
-
-
-        //WebElement visa=driver.findElement(By.xpath("//select[@id='CreditCardType']")) ;
-       // visa.click();
-        //WebElement date=driver.findElement(By.xpath("//select[@id='ExpireMonth']"));
-        //date.click();
-       // WebElement year=driver.findElement(By.xpath("//select[@id='ExpireYear']"));
-      //  year.click();
-       // WebElement continio4=driver.findElement(By.xpath("//input[@class='button-1 payment-info-next-step-button']"));
-       // continio4.click();
 
 
 
