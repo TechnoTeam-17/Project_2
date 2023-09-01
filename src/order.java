@@ -58,7 +58,7 @@ public class order<Select> extends BaseDriver {
 
         WebElement continio=driver.findElement(By.xpath("//input[@class='button-1 new-address-next-step-button']"));
         continio.click();
-        MyFunc.Bekle(3);
+        MyFunc.Bekle(5);
 
         WebElement inStorePickup=driver.findElement(By.xpath("//input[@id='PickUpInStore']"));
         inStorePickup.click();
@@ -68,40 +68,39 @@ public class order<Select> extends BaseDriver {
         continio2.click();
         MyFunc.Bekle(1);
 
-//        WebElement paymentMethod=driver.findElement(By.xpath("//input[@id='paymentmethod_2']"));
-//        paymentMethod.click();
-//        MyFunc.Bekle(1);
 
-//        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-method-next-step-button']"));
-//        continio3.click();
-//        MyFunc.Bekle(1);
 
-        WebElement cash=driver.findElement(By.id("paymentmethod_0"));
-        cash.click();
-        MyFunc.Bekle(2);
+       WebElement cardType=driver.findElement(By.id("paymentmethod_2"));
+       cardType.click();
+       MyFunc.Bekle(3);
 
-//        WebElement cardType=driver.findElement(By.id("CreditCardType"));
-//        cardType.click();
-//        MyFunc.Bekle(1);
-//        WebElement cardHolderName=driver.findElement(By.id("CardholderName"));
-//        cardHolderName.sendKeys("Ali");
-//        MyFunc.Bekle(1);
-//        WebElement cardNumber=driver.findElement(By.id("CardNumber"));
-//        cardNumber.sendKeys("4154517955027492");
-//        MyFunc.Bekle(1);
-//        WebElement Month=driver.findElement(By.id("ExpireMonth"));
-//        Month.sendKeys("05");
-//        MyFunc.Bekle(1);
-//
-//        WebElement Year=driver.findElement(By.id("ExpireYear"));
-//        Year.sendKeys("2023");
-//        MyFunc.Bekle(1);
-//
-//        WebElement cardCode =driver.findElement(By.id("CardCode"));
-//        cardCode.sendKeys("2974");
-//        MyFunc.Bekle(2);
+        js.executeScript("window.scrollTo(0, 500);");
 
-        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-info-next-step-button']']"));
+
+        WebElement continio3a=driver.findElement(By.xpath("//input[@class='button-1 payment-method-next-step-button']"));
+        continio3a.click();
+        MyFunc.Bekle(1);
+
+       WebElement cardHolderName=driver.findElement(By.id("CardholderName"));
+       cardHolderName.sendKeys("Ali");
+       MyFunc.Bekle(1);
+
+       WebElement cardNumber=driver.findElement(By.id("CardNumber"));
+       cardNumber.sendKeys("4154517955027492");
+       MyFunc.Bekle(1);
+       WebElement Month=driver.findElement(By.id("ExpireMonth"));
+       Month.sendKeys("05");
+       MyFunc.Bekle(1);
+
+       WebElement Year=driver.findElement(By.id("ExpireYear"));
+       Year.sendKeys("2023");
+       MyFunc.Bekle(1);
+
+       WebElement cardCode =driver.findElement(By.id("CardCode"));
+       cardCode.sendKeys("2974");
+       MyFunc.Bekle(2);
+
+        WebElement continio3=driver.findElement(By.xpath("//input[@class='button-1 payment-info-next-step-button']"));
         continio3.click();
         MyFunc.Bekle(1);
 
