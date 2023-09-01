@@ -1,5 +1,5 @@
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -82,7 +82,7 @@ public class negative_Login extends BaseDriver {
         WebElement text = driver.findElement(By.xpath("//*[contains(text(),'No customer')]"));
         // System.out.println("text = " + text.getText());
         Assert.assertTrue("giris yapilamaz", text.getText().equals("No customer account found"));
-    BekleVeKapat();
+
     }
 
 

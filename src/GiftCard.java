@@ -1,6 +1,5 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,44 +12,10 @@ import static org.junit.Assert.assertTrue;
 public class GiftCard extends BaseDriver {
 
 
-        @Before
-        public void setup() {
-            driver = new ChromeDriver();
-            driver.get("https://demowebshop.tricentis.com");
-            driver.manage().window().maximize();
-        }
-
-        @After
-        public void teardown() {
-            BekleVeKapat();
-        }
     @Test
-    public void Test2() //_Login
-
+    public void Test() //_giftcards
     {
-
-        WebElement login=driver.findElement(By.cssSelector("[class='ico-login']"));
-        login.click();
-
-        WebElement email=driver.findElement(By.id("Email"));
-        email.sendKeys("Ali06@gmail.com");
-        WebElement Password=driver.findElement(By.id("Password"));
-        Password.sendKeys("Benim.45");
-        MyFunc.Bekle(1);
-
-        WebElement loginButton=driver.findElement(By.cssSelector("input.login-button"));
-        loginButton.click();
-
-        System.out.println("2.inci test başarıyla sonuçlandı.");
-
-        MyFunc.Bekle(1);
-
-    }
-    @Test
-    public void Test3() //_giftcards
-
-    {
-
+        login();
         WebElement Computer = driver.findElement(By.xpath("//a[@href='/computers']"));
         Computer.click();
         MyFunc.Bekle(1);
@@ -84,10 +49,12 @@ public class GiftCard extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement SenderName = driver.findElement(By.xpath("//*[@id='giftcard_1_SenderName']"));
+        SenderName.clear();
         SenderName .sendKeys("Ali");
         MyFunc.Bekle(1);
 
         WebElement SenderEmail = driver.findElement(By.xpath("//*[@id='giftcard_1_SenderEmail']"));
+        SenderEmail .clear();
         SenderEmail .sendKeys("Ali06@gmail.com");
         MyFunc.Bekle(1);
 
@@ -135,7 +102,7 @@ public class GiftCard extends BaseDriver {
 
         System.out.println("Çıkan mesajı ' " + actualMessage2 + " ' istenilen gibidir");
 
-        System.out.println("3.üncü test başarıyla sonuçlandı.");
+        System.out.println("test başarıyla sonuçlandı.");
 
 
     }

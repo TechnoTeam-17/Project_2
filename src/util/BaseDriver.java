@@ -1,11 +1,14 @@
 package util;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
 import java.util.logging.Level;
@@ -13,22 +16,30 @@ import java.util.logging.Logger;
 
 
 public class BaseDriver {
-    public static WebDriver driver; // SingletonDriver method
+    public static WebDriver driver;// SingletonDriver method
     public static WebDriverWait wait;
-
-    static{  //bunun sarti extends olmasi ve basta yer almasi mi
-
+   //
+    @BeforeClass
+    public void startproced(){
         Logger logger= Logger.getLogger(""); // output yapılan logları al.
         logger.setLevel(Level.SEVERE); // sadece ERROR ları göster
 
-        driver = new ChromeDriver();
-        //driver.manage().window().maximize(); // Ekranı max yapıyor.
+         driver = new ChromeDriver();
+        driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  // 20 sn mühlet: elementi bulma mühleti
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+    }
+
+
+        @AfterClass
+    public void endproced(){
+        MyFunc.Bekle(2);
+        driver.quit();
     }
     public static void login () {
-        MyFunc.Bekle(1);
+        //  driver = new ChromeDriver();
         MyFunc.Bekle(1);
         driver.get("https://demowebshop.tricentis.com/");
         driver.manage().window().maximize();
@@ -44,19 +55,17 @@ public class BaseDriver {
         MyFunc.Bekle(1);
         WebElement login= driver.findElement(By.xpath("//*[@type='submit'][@value='Log in']"));
         login.click();
+        WebElement cikti= driver.findElement(By.xpath("//*[text()='ali06@gmail.com']"));
+        Assert.assertTrue(!driver.getTitle().equals("ali06@gmail.com"));
 
     }
-    public static void logout(){
+    public  void logout(){
         driver.get("https://demowebshop.tricentis.com/");
         driver.manage().window().maximize();
-       
+
         WebElement logout= driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a"));
         logout.click();}
-
-    public static void BekleVeKapat(){
-        MyFunc.Bekle(5);
-        driver.quit();
-    }}
+}
 
 
 //  Java hızlı - Web sitesi yavaş

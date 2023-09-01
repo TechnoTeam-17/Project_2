@@ -1,16 +1,18 @@
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import util.BaseDriver;
 import util.MyFunc;
+
+import static org.junit.Assert.assertTrue;
 
 public class survResponse extends BaseDriver {
 
         @Test
         public void test1(){
             driver.get("https://demowebshop.tricentis.com/");
-            driver.manage().window().maximize();
+
             login();
            //WebElement sec= driver.findElement(By.id("pollanswers-1"));
            //sec.click();
@@ -19,8 +21,10 @@ public class survResponse extends BaseDriver {
             MyFunc.Bekle(1);
 
             WebElement sonuc= driver.findElement(By.xpath("//*[@id='poll-block-1']/span"));
-            Assert.assertTrue("oylama basarili",sonuc.isDisplayed());
-            BekleVeKapat();
+
+          org.testng.Assert.assertTrue(sonuc.isDisplayed(),"oylama yapildi");
+            System.out.println("sonuc.getText() = " + sonuc.getText());
+
 
 
 
