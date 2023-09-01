@@ -90,7 +90,8 @@ public class order<Select> extends BaseDriver {
        MyFunc.Bekle(1);
        WebElement Month=driver.findElement(By.id("ExpireMonth"));
        Month.sendKeys("05");
-       MyFunc.Bekle(1);
+       MyFunc.Bekle(2);
+
 
        WebElement Year=driver.findElement(By.id("ExpireYear"));
        Year.sendKeys("2023");
