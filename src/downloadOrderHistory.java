@@ -1,4 +1,4 @@
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -8,25 +8,11 @@ import util.MyFunc;
 
 
 public class downloadOrderHistory extends BaseDriver {
-
-
-
-
-
     @Test
     public void orderhistorytest(){
         driver.get("https://demowebshop.tricentis.com/");
-//login
-        WebElement login= driver.findElement(By.xpath("//*[@href='/login']"));
-        login.click();
-        WebElement email= driver.findElement(By.id("Email"));
-        email.sendKeys("ali06@gmail.com");
-        WebElement pass= driver.findElement(By.id("Password"));
-        pass.sendKeys("Benim.45");
-
-        WebElement loginButton=driver.findElement(By.cssSelector("input.login-button"));
-        loginButton.click();
-//profil sayfasi ve ardindan siparislere gecis
+        login();
+    //profil sayfasi ve ardindan siparislere gecis
         WebElement profil=driver.findElement(By.xpath("//*[@href='/customer/info']"));
         profil.click();
         MyFunc.Bekle(1);
@@ -47,7 +33,8 @@ public class downloadOrderHistory extends BaseDriver {
         WebElement download=driver.findElement(By.linkText("PDF Invoice"));
 
         download.click();
+        MyFunc.Bekle(2);
+        MyFunc.Bekle(2);
 
-        BekleVeKapat();
 
 }}
