@@ -1,5 +1,4 @@
 
-import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,11 +10,11 @@ import static org.junit.Assert.assertTrue;
 
 public class GiftCard extends BaseDriver {
 
-
     @Test
     public void Test() //_giftcards
+
     {
-        login();
+
         WebElement Computer = driver.findElement(By.xpath("//a[@href='/computers']"));
         Computer.click();
         MyFunc.Bekle(1);
@@ -49,12 +48,10 @@ public class GiftCard extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement SenderName = driver.findElement(By.xpath("//*[@id='giftcard_1_SenderName']"));
-        SenderName.clear();
         SenderName .sendKeys("Ali");
         MyFunc.Bekle(1);
 
         WebElement SenderEmail = driver.findElement(By.xpath("//*[@id='giftcard_1_SenderEmail']"));
-        SenderEmail .clear();
         SenderEmail .sendKeys("Ali06@gmail.com");
         MyFunc.Bekle(1);
 
@@ -102,7 +99,7 @@ public class GiftCard extends BaseDriver {
 
         System.out.println("Çıkan mesajı ' " + actualMessage2 + " ' istenilen gibidir");
 
-        System.out.println("test başarıyla sonuçlandı.");
+        System.out.println("3.üncü test başarıyla sonuçlandı.");
 
 
     }
